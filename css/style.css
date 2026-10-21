@@ -859,6 +859,14 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
 
 /* ---------- Contact ---------- */
 .contact { display: grid; gap: var(--space-4); align-items: start; }
+.contact--solo { display: block; max-width: 44rem; }
+.contact--solo .contact__info { text-align: center; }
+.contact--solo .eyebrow--line { justify-content: center; }
+.contact--solo .contact__lead { margin-inline: auto; }
+.contact--solo .info { justify-items: center; }
+.contact--solo .info li { flex-direction: column; gap: 0.6rem; text-align: center; }
+.contact--solo .quick { justify-content: center; }
+.contact--solo .follow { justify-content: center; }
 .contact__lead { margin-top: var(--space-2); max-width: 34rem; color: var(--muted); font-size: 1.0625rem; }
 
 .info { display: grid; gap: var(--space-3); margin-top: var(--space-4); }
@@ -879,70 +887,6 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
 .quick { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: var(--space-4); }
 .quick .btn { padding: 1rem 1.25rem; }
 .quick .btn:first-child { grid-column: 1 / -1; }
-
-.form {
-  padding: 1.5rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-}
-.form__title { font-size: 1.5rem; margin-bottom: var(--space-3); letter-spacing: -0.04em; }
-.form__row { display: grid; gap: var(--space-2); }
-.field { display: grid; gap: 0.5rem; margin-bottom: var(--space-2); }
-.field label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.req { color: var(--cyan); }
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  min-height: 3.25rem;
-  padding: 0.85rem 1rem;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  color: var(--text);
-  appearance: none;
-  -webkit-appearance: none;
-  transition: border-color 0.2s;
-}
-.field select {
-  padding-right: 2.5rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a3a3a3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.9rem center;
-  background-size: 1.1rem;
-}
-.field textarea { min-height: 8rem; resize: vertical; }
-.field input, .field select, .field textarea { font-size: max(1rem, 16px); }
-.field input::placeholder,
-.field textarea::placeholder { color: #777; }
-.field input:focus,
-.field select:focus,
-.field textarea:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 1px var(--cyan); }
-.field.has-error input,
-.field.has-error select { border-color: var(--error); }
-
-.opt { text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--faint); }
-
-.hp {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.form__msg { margin-bottom: var(--space-2); padding: 0.85rem 1rem; font-size: 0.9375rem; border: 1px solid; }
-.form__msg[hidden] { display: none; }
-.form__msg--error { color: var(--error); border-color: rgba(255, 107, 107, 0.5); background: rgba(255, 107, 107, 0.08); }
-.form__msg--ok { color: var(--cyan); border-color: var(--cyan-dim); background: rgba(0, 245, 255, 0.07); }
-.btn[disabled] { opacity: 0.6; cursor: progress; }
 
 /* ---------- Footer ---------- */
 .site-footer { padding-block: var(--space-5) calc(5.5rem + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--bg-alt); }
@@ -1011,7 +955,6 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
 /* ---------- Breakpoints ---------- */
 @media (min-width: 35em) { /* 560px */
   .hero__actions { flex-direction: row; flex-wrap: wrap; }
-  .form__row { grid-template-columns: 1fr 1fr; }
   .facts { grid-template-columns: repeat(2, 1fr); }
   .quick { display: flex; flex-wrap: wrap; }
   .quick .btn { flex: 0 1 auto; padding: 0.95rem 1.25rem; }
@@ -1137,8 +1080,6 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
   .perks { padding-block: 5rem; }
   .trust__list { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding-block: 1.5rem; }
   .trust__list li { justify-content: center; font-size: 0.8125rem; letter-spacing: 0.08em; }
-  .contact { grid-template-columns: 1fr 1.1fr; gap: var(--space-5); }
-  .form { padding: 2.75rem 3rem; }
   .gallery { gap: 1.25rem; }
   .project__title { font-size: 1.125rem; }
 }
@@ -1164,7 +1105,6 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
   .footer__col a { display: inline-block; padding-block: 0.6rem; }
   .footer__nav a { padding-block: 0.7rem; }
   .link-arrow { padding-block: 0.8rem; }
-  .field input, .field select, .field textarea { font-size: max(1rem, 16px); }
 }
 
 @media (max-width: 47.99em) { /* phones: room above the chat widget, no scroll behind dialogs */

@@ -156,7 +156,7 @@
         <a class="btn btn--primary" href="#contact">Book your transformation
           <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
-        <a class="btn btn--outline" href="#contact" data-service="Not sure yet">Get free quote</a>
+        <a class="btn btn--outline" href="#contact">Get free quote</a>
       </div>
     </div>
   </section>
@@ -397,11 +397,11 @@
 
   <!-- CONTACT -->
   <section class="section" id="contact" aria-labelledby="contact-title">
-    <div class="container contact">
+    <div class="container contact contact--solo">
       <div class="contact__info reveal">
         <p class="eyebrow eyebrow--line">Get in touch</p>
         <h2 id="contact-title">Start your build</h2>
-        <p class="contact__lead">Every masterpiece starts with a conversation. Visit our studio, give us a call, or drop us a message to discuss your vision.</p>
+        <p class="contact__lead">Every masterpiece starts with a conversation. Visit our studio, give us a call, send a text or an email, or use the chat button on this page.</p>
 
         <ul class="info">
           <li>
@@ -440,59 +440,6 @@
       </ul>
         </div>
       </div>
-
-      <form class="form reveal" id="quote-form" novalidate>
-        <h3 class="form__title">Request a quote</h3>
-
-        <div class="form__row">
-          <div class="field">
-            <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-name" name="name" type="text" autocomplete="name" autocapitalize="words" required aria-required="true" placeholder="Your name">
-          </div>
-          <div class="field">
-            <label for="f-phone">Phone number <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" placeholder="Phone number">
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
-          <input id="f-email" name="email" type="email" autocomplete="email" required aria-required="true" placeholder="you@example.com">
-        </div>
-
-        <div class="field">
-          <label for="f-service">Service of interest <span class="req" aria-hidden="true">*</span></label>
-          <select id="f-service" name="service" required aria-required="true">
-            <option value="">Select a service</option>
-            <option>Paint protection film (PPF)</option>
-            <option>Ceramic coating</option>
-            <option>Paint correction (polish)</option>
-            <option>Detailing &amp; tint</option>
-            <option>Car wrap</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="f-vehicle">Vehicle make &amp; model <span class="req" aria-hidden="true">*</span></label>
-          <input id="f-vehicle" name="vehicle" type="text" autocapitalize="words" required aria-required="true" placeholder="e.g. 2023 Porsche 911">
-        </div>
-
-        <div class="field">
-          <label for="f-details">Project details <span class="opt">(optional)</span></label>
-          <textarea id="f-details" name="details" rows="4" placeholder="Brief project description"></textarea>
-        </div>
-
-        <div class="hp" aria-hidden="true">
-          <label for="f-botcheck">Leave this field empty</label>
-          <input id="f-botcheck" name="botcheck" type="text" tabindex="-1" autocomplete="off">
-        </div>
-
-        <p class="form__msg form__msg--error" id="form-error" role="alert" hidden></p>
-        <p class="form__msg form__msg--ok" id="form-success" role="status" hidden>Thank you. Your inquiry was sent and we will be in touch soon.</p>
-
-        <button class="btn btn--primary btn--block" type="submit" id="form-submit">Submit inquiry</button>
-      </form>
     </div>
   </section>
 
@@ -592,7 +539,7 @@
         <ul class="viewer__chips" id="viewer-chips"></ul>
       </div>
       <div class="viewer__actions">
-        <a class="btn btn--primary btn--block" id="viewer-book" href="#contact" data-service="Not sure yet">Book this service</a>
+        <a class="btn btn--primary btn--block" id="viewer-book" href="#contact">Book this service</a>
         <a class="btn btn--outline btn--block" id="viewer-text" href="sms:12015461137"><span class="viewer__lbl-lg">Text +1 (201) 546-1137</span><span class="viewer__lbl-sm">Text us</span></a>
       </div>
     </div>
