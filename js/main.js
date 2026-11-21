@@ -24,19 +24,19 @@
       ]
     },
     'paint-correction': {
-      title: 'Paint correction',
+      title: 'Paint Correction',
       alts: [
         'Dual-action polisher with a blue pad on a black door'
       ]
     },
     'ceramic-coating': {
-      title: 'Ceramic coating',
+      title: 'Ceramic Coating',
       alts: [
         'Coating poured onto an applicator and wiped across glossy black paint'
       ]
     },
     'ppf-install': {
-      title: 'PPF installation',
+      title: 'PPF Installation',
       alts: [
         'Paint protection film squeegeed onto a green bumper'
       ]
@@ -65,14 +65,14 @@
       ]
     },
     'toyota-sedan': {
-      title: 'Toyota sedan',
+      title: 'Toyota Sedan',
       alts: [
         'Rear of a gray Toyota sedan with a spoiler under the hexagon lights',
         'Gray Toyota sedan, rear three-quarter view in the studio'
       ]
     },
     'black-sedan': {
-      title: 'Black sedan',
+      title: 'Black Sedan',
       alts: [
         'Black sedan at the studio doorway'
       ]
@@ -91,22 +91,22 @@
       chips: []
     },
     'paint-correction': {
-      tag: 'Paint correction',
+      tag: 'Paint Correction',
       media: 'video',
       desc: 'Machine polishing on black paint in the studio. Polishing levels out surface marks and brings the gloss back before protection goes on.',
-      chips: ['Machine polish', 'Paint correction']
+      chips: ['Machine Polish', 'Paint Correction']
     },
     'ceramic-coating': {
-      tag: 'Ceramic coating',
+      tag: 'Ceramic Coating',
       media: 'video',
       desc: 'Ceramic coating poured onto an applicator and worked into glossy black paint by hand.',
-      chips: ['Ceramic coating', 'Hand applied']
+      chips: ['Ceramic Coating', 'Hand Applied']
     },
     'ppf-install': {
-      tag: 'Paint protection film',
+      tag: 'Paint Protection Film',
       media: 'video',
       desc: 'Clear paint protection film going onto a green bumper. The film is laid wet, steamed, squeegeed down and worked around the edges by hand.',
-      chips: ['PPF install', 'Hand squeegee']
+      chips: ['PPF Install', 'Hand Squeegee']
     },
     'mercedes-amg': {
       tag: 'Studio video',
