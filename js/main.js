@@ -272,6 +272,71 @@
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  /* ---------- Chat widget: contact and quote buttons open it ---------- */
+  function chatApi() {
+    var lc = window.leadConnector;
+    return lc && lc.chatWidget && lc.chatWidget.isLoaded && typeof lc.chatWidget.openWidget === 'function' ? lc.chatWidget : null;
+  }
+
+  function openChat() {
+    var api = chatApi();
+    if (api) { api.openWidget(); return; }
+    var done = false;
+    function fallback() {
+      if (done) return;
+      done = true;
+      window.removeEventListener('LC_chatWidgetLoaded', onLoaded);
+      var contact = document.getElementById('contact');
+      if (contact) contact.scrollIntoView({ block: 'start' });
+      else window.location.href = 'index.html#contact';
+    }
+    function onLoaded() {
+      if (done) return;
+      done = true;
+      window.clearTimeout(timer);
+      var ready = chatApi();
+      if (ready) ready.openWidget();
+    }
+    var timer = window.setTimeout(fallback, 5000);
+    window.addEventListener('LC_chatWidgetLoaded', onLoaded, { once: true });
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-open-chat]');
+    if (!btn || e.defaultPrevented) return;
+    e.preventDefault();
+    openChat();
+  });
+
+  /* ---------- Black Friday countdown ---------- */
+  var offers = document.getElementById('offers');
+  if (offers) {
+    var endAt = Date.parse(offers.getAttribute('data-end'));
+    var cdEls = {
+      days: document.querySelector('[data-cd="days"]'),
+      hours: document.querySelector('[data-cd="hours"]'),
+      minutes: document.querySelector('[data-cd="minutes"]'),
+      seconds: document.querySelector('[data-cd="seconds"]')
+    };
+    var cdTimer = null;
+    var tickOffers = function () {
+      var left = endAt - Date.now();
+      if (isNaN(endAt) || left <= 0) {
+        offers.hidden = true;
+        document.querySelectorAll('[data-promo]').forEach(function (el) { el.hidden = true; });
+        if (cdTimer) window.clearInterval(cdTimer);
+        return;
+      }
+      var s = Math.floor(left / 1000);
+      cdEls.days.textContent = pad(Math.floor(s / 86400));
+      cdEls.hours.textContent = pad(Math.floor(s % 86400 / 3600));
+      cdEls.minutes.textContent = pad(Math.floor(s % 3600 / 60));
+      cdEls.seconds.textContent = pad(s % 60);
+    };
+    tickOffers();
+    cdTimer = window.setInterval(tickOffers, 1000);
+  }
+
   /* ---------- Gallery lightbox ---------- */
   var viewer = document.getElementById('viewer');
   var current = { slug: null, index: 0, trigger: null };
@@ -393,7 +458,10 @@
     document.getElementById('viewer-close').addEventListener('click', closeViewer);
     document.getElementById('viewer-prev').addEventListener('click', function () { showPhoto(current.index - 1); });
     document.getElementById('viewer-next').addEventListener('click', function () { showPhoto(current.index + 1); });
-    document.getElementById('viewer-book').addEventListener('click', closeViewer);
+    document.getElementById('viewer-book').addEventListener('click', function () {
+      current.trigger = null;
+      closeViewer();
+    });
     viewer.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowLeft') showPhoto(current.index - 1);
       if (e.key === 'ArrowRight') showPhoto(current.index + 1);

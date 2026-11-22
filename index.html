@@ -111,6 +111,7 @@
           <a href="#services">Services</a>
           <ul class="subnav" aria-label="Services">
             <li><a href="paint-protection.html"><span class="subnav__title">Paint Protection</span><span class="subnav__text">Ceramic, PPF and Paint Correction</span></a></li>
+            <li><a href="undercoating.html"><span class="subnav__title">Undercoating</span><span class="subnav__text">Rust and road salt protection</span></a></li>
             <li><a href="detailing-tint.html"><span class="subnav__title">Detailing &amp; Tint</span><span class="subnav__text">Showroom finish and ceramic tint</span></a></li>
             <li><a href="car-wraps.html"><span class="subnav__title">Car Wraps</span><span class="subnav__text">Color change and custom finishes</span></a></li>
           </ul>
@@ -131,7 +132,7 @@
         <li><a class="social__link" href="https://www.facebook.com/p/Zephyr-Customz-61579824745924/" target="_blank" rel="noopener" aria-label="Zephyr Customz on Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
         <li><a class="social__link" href="https://www.instagram.com/zephyrcustomznj/" target="_blank" rel="noopener" aria-label="Zephyr Customz on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
       </ul>
-      <a class="btn btn--primary nav__cta" href="#contact">Contact</a>
+      <a class="btn btn--primary nav__cta" data-open-chat href="#contact">Contact</a>
     </div>
 
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -154,10 +155,62 @@
       </h1>
       <p class="hero__lead">Precision engineering meets uncompromising craftsmanship. Experience the flawless finish your vehicle deserves.</p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#contact">Book your transformation
+        <a class="btn btn--primary" data-open-chat href="#contact">Book your transformation
           <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
-        <a class="btn btn--outline" href="#contact">Get free quote</a>
+        <a class="btn btn--outline" data-open-chat href="#contact">Get free quote</a>
+      </div>
+      <div class="hero__promo" data-promo>
+        <div class="hero__promo-info">
+          <p class="hero__promo-kicker">Black Friday</p>
+          <p class="hero__promo-label">Offers end in</p>
+        </div>
+        <div class="countdown countdown--hero" role="timer" aria-label="Time left on the Black Friday offers">
+          <div class="countdown__unit"><span class="countdown__num" data-cd="days">00</span><span class="countdown__name">Days</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-cd="hours">00</span><span class="countdown__name">Hours</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-cd="minutes">00</span><span class="countdown__name">Min</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-cd="seconds">00</span><span class="countdown__name">Sec</span></div>
+        </div>
+        <a class="link-arrow hero__promo-link" href="#offers">See offers
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLACK FRIDAY OFFERS -->
+  <section class="offers" id="offers" aria-labelledby="offers-title" data-end="2026-11-30T00:00:00-05:00">
+    <div class="container">
+      <header class="offers__head">
+        <p class="eyebrow eyebrow--lines">Black Friday promotions</p>
+        <h2 id="offers-title">Two offers. One week only.</h2>
+      </header>
+
+      <div class="offers__grid">
+        <article class="offer reveal">
+          <p class="offer__kicker">Ceramic</p>
+          <h3 class="offer__title">Ceramic Coating</h3>
+          <p class="offer__price">$399</p>
+          <ul class="ticks">
+            <li>5-year ceramic coating</li>
+          </ul>
+          <a class="btn btn--primary" data-open-chat href="#contact">Claim this offer
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </article>
+
+        <article class="offer offer--hybrid reveal">
+          <p class="offer__kicker">Hybrid</p>
+          <h3 class="offer__title">Hybrid Package</h3>
+          <p class="offer__price">$1,799</p>
+          <ul class="ticks">
+            <li>Full front PPF</li>
+            <li>7-year ceramic coating for the rest of the car</li>
+          </ul>
+          <a class="btn btn--primary" data-open-chat href="#contact">Claim this offer
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </article>
       </div>
     </div>
   </section>
@@ -180,13 +233,23 @@
         <h2 id="services-title">Mastery in every detail</h2>
       </header>
 
-      <div class="cards" data-reveal-group>
+      <div class="cards cards--four" data-reveal-group>
         <article class="card reveal">
           <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
           <h3 class="card__title">Protection</h3>
           <p class="card__sub">Ceramic, PPF &amp; Paint Correction</p>
           <p class="card__text">Invisible protection against scratches, chips, and wear. Self-healing paint protection film, ceramic coating for gloss, and paint correction to polish the surface first.</p>
           <a class="link-arrow" href="paint-protection.html">Explore service
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+          <h3 class="card__title">Defense</h3>
+          <p class="card__sub">Undercoating</p>
+          <p class="card__text">Rust and road salt protection for the underbody. A protective coating on the underside of the car to guard against moisture and corrosion.</p>
+          <a class="link-arrow" href="undercoating.html">Explore service
             <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
         </article>
@@ -245,7 +308,7 @@
       </ol>
 
       <div class="process__cta reveal">
-        <a class="btn btn--primary" href="#contact">Contact
+        <a class="btn btn--primary" data-open-chat href="#contact">Contact
           <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
       </div>
@@ -459,6 +522,7 @@
         <p class="footer__label">Services</p>
         <ul>
           <li><a href="paint-protection.html">Paint Protection</a></li>
+          <li><a href="undercoating.html">Undercoating</a></li>
           <li><a href="detailing-tint.html">Detailing &amp; Tint</a></li>
           <li><a href="car-wraps.html">Car Wraps</a></li>
         </ul>
@@ -541,7 +605,7 @@
         <ul class="viewer__chips" id="viewer-chips"></ul>
       </div>
       <div class="viewer__actions">
-        <a class="btn btn--primary btn--block" id="viewer-book" href="#contact">Book this service</a>
+        <a class="btn btn--primary btn--block" id="viewer-book" data-open-chat href="#contact">Book this service</a>
         <a class="btn btn--outline btn--block" id="viewer-text" href="sms:12015461137"><span class="viewer__lbl-lg">Text +1 (201) 546-1137</span><span class="viewer__lbl-sm">Text us</span></a>
       </div>
     </div>

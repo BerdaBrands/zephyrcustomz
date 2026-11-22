@@ -325,6 +325,45 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
   margin-top: var(--space-4);
 }
 
+.hero__promo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "info link" "timer timer";
+  align-items: center;
+  gap: 0.75rem 1rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: var(--space-3);
+  padding: 0.9rem 1rem;
+  background: rgba(8, 8, 8, 0.72);
+  border: 1px solid var(--cyan-dim);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.hero__promo-info { grid-area: info; }
+.hero__promo .countdown { grid-area: timer; }
+.hero__promo-link { grid-area: link; }
+.hero__promo-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--magenta);
+}
+.hero__promo-label {
+  margin-top: 0.15rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.countdown--hero { margin-top: 0; grid-template-columns: repeat(4, minmax(0, 4.5rem)); justify-content: start; }
+.countdown--hero .countdown__unit { padding: 0.5rem 0.25rem; gap: 0.25rem; }
+.countdown--hero .countdown__num { font-size: 1.5rem; }
+.hero__promo-link .icon { transform: rotate(90deg); }
+.hero__promo-link:hover { gap: 0.6rem; }
+
 /* ---------- Sections ---------- */
 .section { padding-block: var(--space-5); }
 .section--alt { background: var(--bg-alt); border-block: 1px solid var(--line-soft); }
@@ -501,6 +540,78 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
 @keyframes ring {
   0% { box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.55), 0 0 30px rgba(0, 245, 255, 0.22); }
   100% { box-shadow: 0 0 0 20px rgba(0, 245, 255, 0), 0 0 30px rgba(0, 245, 255, 0.22); }
+}
+
+/* ---------- Black Friday offers ---------- */
+.offers {
+  padding-block: var(--space-5);
+  background: linear-gradient(180deg, #0d1112 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--line-soft);
+}
+.offers__head { text-align: center; margin-bottom: var(--space-4); }
+.offers__head h2 {
+  margin: 0.9rem auto 0;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  letter-spacing: -0.04em;
+}
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 6rem));
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-2);
+}
+.countdown__unit {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  padding: 0.9rem 0.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.countdown__num {
+  font-size: clamp(1.75rem, 8vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--cyan);
+}
+.countdown__name {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.offers__grid { display: grid; gap: var(--space-2); max-width: 60rem; margin-inline: auto; }
+.offer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--cyan-dim);
+}
+.offer--hybrid { border-color: var(--magenta-dim); background: linear-gradient(180deg, #160f16 0%, var(--surface) 60%); }
+.offer__kicker {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.offer__title { margin-top: 0.75rem; font-size: 1.75rem; color: var(--magenta); letter-spacing: -0.03em; }
+.offer__price {
+  margin-top: var(--space-3);
+  font-size: clamp(3rem, 12vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.offer .btn { align-self: stretch; }
+@media (min-width: 48em) {
+  .offers__grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* ---------- Trust bar ---------- */
@@ -813,7 +924,7 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
 .svc-body .container,
 .svc-more .container { max-width: 72rem; }
 .section__head--center h2 { margin-inline: auto; }
-.svc-more .cards { max-width: 48rem; margin-inline: auto; }
+.svc-more .cards { max-width: 72rem; margin-inline: auto; }
 .svc-body { padding-block: var(--space-4) var(--space-5); }
 .svc-block { display: grid; gap: var(--space-4); align-items: center; padding-block: var(--space-4); border-top: 1px solid var(--line); }
 .svc-block:first-child { border-top: 0; }
@@ -956,6 +1067,11 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
 .js .reveal.is-in { opacity: 1; transform: none; }
 
 /* ---------- Breakpoints ---------- */
+@media (max-width: 47.99em) { /* phones: keep the Black Friday countdown near the first screen */
+  .hero { padding-block: var(--space-3) var(--space-4); }
+  .hero__actions { margin-top: var(--space-3); }
+}
+
 @media (min-width: 35em) { /* 560px */
   .hero__actions { flex-direction: row; flex-wrap: wrap; }
   .facts { grid-template-columns: repeat(2, 1fr); }
@@ -965,6 +1081,7 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
 
 @media (min-width: 48em) { /* 768px */
   :root { --gutter: 2rem; --space-5: 5rem; }
+  .hero__promo { grid-template-columns: auto auto auto; grid-template-areas: "info timer link"; gap: var(--space-3); margin-top: var(--space-4); padding: 1rem 1.5rem; }
   .cards { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
   .reviews__head { grid-template-columns: 1fr auto; align-items: end; }
   .reviews__track { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-inline: 0; padding: 0; overflow: visible; }
@@ -1057,7 +1174,7 @@ h1, h2, h3 { font-weight: 800; text-transform: uppercase; letter-spacing: -0.035
   .nav__menu > ul:not(.social) .subnav a { padding: 0.75rem 1rem; transition: background 0.2s; }
   .nav__menu > ul:not(.social) .subnav a:hover { background: var(--surface-2); }
 
-  .hero { min-height: 44rem; }
+  .hero { min-height: 44rem; padding-block: var(--space-4); }
   .hero__media { left: 38%; }
   .hero__media video {
     opacity: 1;
@@ -1134,7 +1251,8 @@ html:has(dialog[open]) { overflow: hidden; }
 }
 
 @media (min-width: 48em) {
-  .svc-more .cards { grid-template-columns: repeat(2, 1fr); }
+  .svc-more .cards { grid-template-columns: repeat(3, 1fr); }
+  .cards--four { grid-template-columns: repeat(2, 1fr); }
   .svc-block:not(.svc-block--center) { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-5); }
   .svc-block--flip .svc-block__copy { order: 2; }
 }
@@ -1166,4 +1284,8 @@ html:has(dialog[open]) { overflow: hidden; }
   *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   .js .reveal { opacity: 1; transform: none; }
   .project:hover img { transform: none; }
+}
+
+@media (min-width: 64em) { /* four services across */
+  .cards--four { grid-template-columns: repeat(4, 1fr); }
 }
